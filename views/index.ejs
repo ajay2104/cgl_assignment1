@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My First Angular App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.22/angular-ui-router.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="static/css/1.css">
+</head>
+<body>
+        <div class="pos-f-t">
+                <div class="collapse" id="navbarToggleExternalContent">
+                  <div class="bg-dark p-4">
+                    <h4 class="text-white">Collapsed content</h4>
+                    <span class="text-muted">Toggleable via the navbar brand.</span>
+                  </div>
+                </div>
+                <nav class="navbar navbar-dark bg-dark">
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                </nav>
+              </div>
+    <div class="container">
+    <div ng-app="myShopping" >
+        <div ng-controller="myCtrl">
+        <h1><p style="text-align:center;">Angular App</p></h1>
+        <br></br>
+                <div class="sidenav">
+                        <a ui-sref="Software" ui-sref-active="active">Software</a>
+                        <a ui-sref="Hardware" ui-sref-active="active">Hardware</a>
+                      </div>
+
+        <ul>
+            <li ng-repeat="x in products">
+                {{x}}<span ng-click="removeItem($index)">&times;</span>
+            </li>
+        </ul>
+        <input ng-model="addMe">
+        <button ng-click="addItem()">Add</button>
+        <p>{{errortext}}</p>
+    </div>
+        <div ng-controller="myCtrl1">
+        <input ng-model="name" >
+        <button ng-click="click()">Add Name</button>
+        <h1>You entered: {{ name }}</h1>
+        </div>
+
+        <ui-view></ui-view>
+    </div>
+    </div>
+    
+    <script src = "http://localhost:5000/static/js/1.js"></script>
+</body>
+</html>
